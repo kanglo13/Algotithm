@@ -42,9 +42,11 @@ for num in nums:
     for i in range(nums, target+1):
 3.如果组合问题需考虑元素之间的顺序，需将target放在外循环，将nums放在内循环。 **
 
+
 for i in range(1, target+1):
     for num in nums:
 代码
+```python
 class Solution:
     def combinationSum4(self, nums: List[int], target: int) -> int:
         if not nums:
@@ -56,4 +58,5 @@ class Solution:
                 if i >= num:
                     dp[i] += dp[i-num]
         return dp[target]
+```
 
