@@ -31,7 +31,7 @@ dp[i] = min(dp[i], dp[i-num]+1)或者dp[i] = max(dp[i], dp[i-num]+1)
 接下来讲一下背包问题的判定
 背包问题具备的特征：给定一个target，target可以是数字也可以是字符串，再给定一个数组nums，nums中装的可能是数字，也可能是字符串，问：能否使用nums中的元素做各种排列组合得到target。
 
-背包问题技巧：
+** 背包问题技巧：
 1.如果是0-1背包，即数组中的元素不可重复使用，nums放在外循环，target在内循环，且内循环倒序；
 
 for num in nums:
@@ -40,7 +40,7 @@ for num in nums:
 
 for num in nums:
     for i in range(nums, target+1):
-3.如果组合问题需考虑元素之间的顺序，需将target放在外循环，将nums放在内循环。
+3.如果组合问题需考虑元素之间的顺序，需将target放在外循环，将nums放在内循环。 **
 
 for i in range(1, target+1):
     for num in nums:
@@ -57,7 +57,3 @@ class Solution:
                     dp[i] += dp[i-num]
         return dp[target]
 
-作者：Jackie1995
-链接：https://leetcode-cn.com/problems/combination-sum-iv/solution/xi-wang-yong-yi-chong-gui-lu-gao-ding-bei-bao-wen-/
-来源：力扣（LeetCode）
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
