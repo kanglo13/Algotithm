@@ -1,5 +1,8 @@
 package twoPointer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TwoSum {
     public int[]twoSum(int[]numbers,int target){
         if (numbers == null)
@@ -15,5 +18,17 @@ public class TwoSum {
                 i++;
         }
         return null;
+    }
+    public int[]twoSumII(int[]nums,int target){
+        int n = nums.length;
+        Map<Integer,Integer>map = new HashMap<>();
+        for (int i = 0;i < n;i++){
+            int other = target - nums[i];;
+            if (map.containsKey(other)){
+                return new int[]{map.get(other),i};
+            }
+            map.put(nums[i],i);
+        }
+        return new int[0];
     }
 }
