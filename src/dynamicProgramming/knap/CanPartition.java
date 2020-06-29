@@ -21,4 +21,17 @@ public class CanPartition {
         }
         return sum;
     }
+    public boolean canPartitionII(int[]nums){
+        int sum = computeSum(nums);
+        if ((sum & 1) != 0)
+            return false;
+        sum /= 2;
+        boolean[]dp = new boolean[sum+1];
+        for (int num :nums){
+            for (int i = num;i <= sum;i++){
+                dp[i] = dp[i] || dp[i-num];
+            }
+        }
+        return dp[sum];
+    }
 }
