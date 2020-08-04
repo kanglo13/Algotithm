@@ -24,4 +24,21 @@ public class PartitionLabels {
         }
         return partitions;
     }
+    public List<Integer>partitionLabel(String s){
+        List<Integer>result = new ArrayList<>();
+        int[]hash = new int[26];
+        int n = s.length();
+        for (int i = 0;i < n;i++){
+            hash[s.charAt(i)-'a'] = i;
+        }
+        int last = 0, start = 0;
+        for (int i = 0;i < n;i++){
+            last = Math.max(last,hash[s.charAt(i)-'a']);
+            if (i == last){
+                result.add(i-start+1);
+                start = i + 1;
+            }
+        }
+        return result;
+    }
 }
