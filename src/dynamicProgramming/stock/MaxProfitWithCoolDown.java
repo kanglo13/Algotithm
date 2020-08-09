@@ -1,6 +1,5 @@
 package dynamicProgramming.stock;
 
-import jdk.jshell.spi.SPIResolutionException;
 
 public class MaxProfitWithCoolDown {
     public int maxProfit(int[] prices){
