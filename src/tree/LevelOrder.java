@@ -28,4 +28,26 @@ public class LevelOrder {
         }
         return result;
     }
+    public List<List<Integer>>levelOrders(TreeNode root){
+        List<List<Integer>>result = new ArrayList<>();
+        if (root == null)
+            return result;
+        Queue<TreeNode>queue = new LinkedList<>();
+        queue.add(root);
+        while(!queue.isEmpty()){
+            int size = queue.size();
+            List<Integer>list = new ArrayList<>();
+            while(size-- > 0){
+                TreeNode cur = queue.poll();
+                list.add(cur.val);
+                if(cur.left != null)
+                    queue.add(cur.left);
+                if(cur.right != null)
+                    queue.add(cur.right);
+            }
+            if (list.size() > 0)
+                result.add(list);
+        }
+        return result;
+    }
 }
