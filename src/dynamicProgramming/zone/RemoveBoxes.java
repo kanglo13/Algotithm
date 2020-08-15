@@ -7,6 +7,7 @@ public class RemoveBoxes {
        int n = boxes.length;
        dp = new int[n][n][n];
        this.boxes = boxes;
+       return dfs(0,n-1,0);
    }
    private int dfs(int i,int j,int k){
        if (i > j)
