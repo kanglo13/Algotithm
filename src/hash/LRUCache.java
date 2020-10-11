@@ -15,7 +15,7 @@ public class LRUCache {
     }
     public int get(int key){
         if (cache.containsKey(key)){
-            list.remove(key);
+            list.remove((Integer)key);
             list.addLast(key);
             return cache.get(key);
         }
@@ -23,7 +23,7 @@ public class LRUCache {
     }
     public void put(int key,int value){
         if (cache.containsKey(key)){
-            list.remove(key);
+            list.remove((Integer)key);
             list.addLast(key);
             cache.put(key,value);
             return;
