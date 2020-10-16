@@ -16,13 +16,11 @@ public class ThreadPrinter implements Runnable {
     @Override
     public void run() {
         int count = 10;
-        while (count > 0){
+        while (count-- > 0){
             synchronized (prev){
                 synchronized (self){
                     System.out.println(name);
-                    count--;
                     self.notifyAll();
-
                 }
                 try {
                     if (count == 0)
@@ -49,6 +47,5 @@ public class ThreadPrinter implements Runnable {
         Thread.sleep(10);
         new Thread(printerC).start();
         Thread.sleep(10);
-
     }
 }
