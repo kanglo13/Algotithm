@@ -5,7 +5,7 @@ import java.util.Map;
 
 /**
  * @author kanglo
- * @create 2020-12-2020/12/27 9:44
+ *@create 2020-12-2020/12/27 9:44
  */
 public class IsIsomorphic {
     public boolean isIsomorphic(String s,String t){
