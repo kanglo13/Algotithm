@@ -23,7 +23,7 @@ public class MinWindow {
         while (right < s.length()){
             char ch = s.charAt(right);
             window[ch]++;
-            if (needs[ch] > 0 && window[ch] >= needs[ch]){
+            if (needs[ch] > 0 && window[ch] == needs[ch]){
                 valid++;
             }
             while (valid == num){
@@ -32,7 +32,7 @@ public class MinWindow {
                     res = s.substring(left,right+1);
                 }
                 char ch1 = s.charAt(left);
-                if (needs[ch1] > 0 && window[ch1] >= needs[ch1]){
+                if (needs[ch1] > 0 && window[ch1] == needs[ch1]){
                     valid--;
                 }
                 window[ch1]--;
